@@ -21,3 +21,7 @@ export const checkForWinner = (board, player1, player2) => {
     }
     return null
 }
+
+export const checkForTie = (board) => {
+    return board.filter(space => space !== null).length === 9
+}
