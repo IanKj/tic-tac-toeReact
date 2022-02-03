@@ -1,4 +1,4 @@
-import React from 'react'
+import './styles.css'
 
 export const checkForWinner = (board, player1, player2) => {
     const winningCombos =
@@ -16,10 +16,15 @@ export const checkForWinner = (board, player1, player2) => {
     for (let i = 0; i < winningCombos.length; i++) {
         const [a, b, c] = winningCombos[i]
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-            return board[a] === player1.symbol ? player1.name : player2.name
+            const winner = board[a] === player1.symbol ? player1.name : player2.name
+            return [winner, winningCombos[i]]
         }
     }
-    return null
+    return
+}
+
+export const displayNameError = () => {
+
 }
 
 export const checkForTie = (board) => {

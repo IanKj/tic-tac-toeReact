@@ -1,19 +1,19 @@
 import React from 'react'
 import Square from './Square'
+import NameErrorBox from './NameErrorBox'
+import '../styles.css'
 
-const Board = ({ board, onClick }) => {
+const Board = ({ board, onClick, winner, nameErrorStatus }) => {
 
-    const styles = {
-        width: '300px',
-        height: '300px',
-        display: 'grid',
-        gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
-    }
+
     return (
-        <div style={styles}>
+        <div className='boardGrid'>
+            {nameErrorStatus ? <NameErrorBox /> : ''}
             {board.map((item, index) => (
                 <Square
+                    winner={winner}
                     key={index}
+                    index={index}
                     value={item}
                     onClick={() => onClick(index)}
                 ></Square>

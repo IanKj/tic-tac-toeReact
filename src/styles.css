@@ -1,0 +1,183 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 4%, rgba(0,212,255,1) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 4rem;
+    opacity: .7;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+.buttonFormContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100%
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.buttonContainer button {
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+input {
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid white;
+    box-shadow: inset 0 0 8px  rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+form button {
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.gameOptionsContainer {
+    height: 90px;
+}
+ .gameOptionsContainer p {
+     text-align: center;
+    
+ }
+
+.boardGrid {
+
+    width: 550px;
+    height: 550px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-gap: 10px;
+    position: relative;
+}
+
+.gridButton{
+    font-size: 4rem;
+    background-color: black;
+    opacity: .5;
+    color: white;
+    transition: opacity 100ms;
+    transition: scale 100ms;
+    transition: scale 100ms;
+    transition: background-color 700ms;
+    border: 1px;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+button:hover {
+transform: scale(1.05);
+transition: all 200ms;
+}
+
+button:active {
+    transform: scale(0.95);
+transition: all 200ms;
+}
+
+.winner {
+    background-color: green;
+    opacity: .7;
+
+}
+
+button.active {
+    background-color: green;
+    opacity: .7;
+    border: 1px solid black;
+    box-shadow: 5px 2px 5px greenyellow;
+    font-weight: bold;
+    transition: all 100ms;
+}
+
+.inactive {
+    background-color: #808080;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    height: 100%;
+    transition: all 2000ms;
+}
+
+.formDisplayContainer {
+    position: relative;
+
+}
+
+.versusDisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.hidden {
+    opacity: 0;
+    /* transition: all 2000ms; */
+}
+
+.bottomButtonsContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottomButtonsContainer button {
+    background-color: #808080;
+    font-size: 1rem;
+    width: 100px; 
+    margin-left: 20px;
+}
+
+.errorBoxContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    border: black;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .boardGrid {
+        width: 300px;
+        height: 300px;
+        grid-gap: 5px;
+    }
+}
